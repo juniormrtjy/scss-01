@@ -1,0 +1,43 @@
+@import 'mixins';
+
+main {
+  display: flex;
+  min-height: 100vh;
+
+  @include breakpoint(medium) {
+    flex-direction: column;
+  }
+
+  .left {
+    flex: 0 1 46.5rem;
+
+    @include breakpoint(medium) {
+      flex-grow: 1;
+      order: 2;
+    }
+
+    background-color: $leftColor;
+    padding-inline: 3rem;
+    @include centerElements;
+  }
+
+  .right {
+    flex: 1 1 auto;
+
+    @include breakpoint(medium) {
+      order: 1;
+    }
+
+    @include centerElements;
+
+    .wrapper {
+      width: 45rem;
+
+      @include breakpoint(medium) {
+        width: auto;
+      }
+
+      padding: 1.2rem;
+    }
+  }
+}
